@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExpedisiPaketAPI.Data
+namespace ExpedisiPaketAPI.Data //expedisi
 {
     public class ExpedisiDbContext : IdentityDbContext<IdentityUser>
     {
