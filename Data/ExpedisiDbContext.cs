@@ -38,4 +38,9 @@ namespace ExpedisiPaketAPI.Data //expedisi
             });
         }
     }
+
+    public class expedisitambahan
+    {
+
+    }
 }
