@@ -1,9 +1,11 @@
 using ExpedisiPaketAPI.Services;
 using ExpedisiPaketAPI.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpedisiPaketAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PaketsController : ControllerBase
@@ -48,6 +50,7 @@ namespace ExpedisiPaketAPI.Controllers
         }
 
         [HttpGet("resi/{nomerResi}")]
+        [AllowAnonymous]
         public async Task<ActionResult> GetPaketByNomerResi(string nomerResi)
         {
             try
@@ -93,6 +96,7 @@ namespace ExpedisiPaketAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> CreatePaket([FromBody] CreatePaketDto dto)
         {
             try
@@ -110,6 +114,7 @@ namespace ExpedisiPaketAPI.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Kurir")]
         public async Task<ActionResult> UpdatePaket(int id, [FromBody] UpdatePaketDto dto)
         {
             try
@@ -130,6 +135,7 @@ namespace ExpedisiPaketAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> DeletePaket(int id)
         {
             try

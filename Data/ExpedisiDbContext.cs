@@ -1,9 +1,11 @@
 using ExpedisiPaketAPI.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ExpedisiPaketAPI.Data
 {
-    public class ExpedisiDbContext : DbContext
+    public class ExpedisiDbContext : IdentityDbContext<IdentityUser>
     {
         public ExpedisiDbContext(DbContextOptions<ExpedisiDbContext> options) : base(options)
         {
