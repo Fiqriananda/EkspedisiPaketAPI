@@ -2,7 +2,7 @@ using System;
 using static EkspedisiPaketAPI.Models.StatusPengiriman.StatusPengirimanConstant;
 namespace ExpedisiPaketAPI.Models
 {
-    public class Paket
+    public class Paket //paket
     {
         public int Id { get; set; }
         public string NomerResi { get; set; } = string.Empty;
